@@ -46,12 +46,12 @@ public class Convert{
         //Program asks user for the currency they want to exchange and how much of it they want to exchange
         System.out.println("Which currency would you like to exchange?:");
         System.out.println("-USD (United States Dollar)\n-EUR (Euro)\n-JPY (Japanese Yen)\n-GBP (Great Britain Pound)\n-AUD (Australian Dollar)");
-        /*The following lines make the program more user friendly by automatically capitalizing the letters in their currency selection 
+        /*The following lines make the program more user-friendly by automatically capitalizing the letters in their currency selection
         as well as letting them know if they chose an invalid currency*/ 
         String exchangeFrom = input.nextLine().toUpperCase();
         while(!exchangeFrom.equals( "USD") && !exchangeFrom.equals( "EUR") && !exchangeFrom.equals( "JPY") && !exchangeFrom.equals( "GBP") && !exchangeFrom.equals( "AUD")){
             System.out.println("Invalid currency. Please try again.");
-            exchangeFrom = input.nextLine();
+            exchangeFrom = input.nextLine().toUpperCase();
         }
         System.out.println("\nHow much " + exchangeFrom + " would you like to exchange?");
         double amount = input.nextDouble();
@@ -68,7 +68,7 @@ public class Convert{
         String exchangeTo = input.nextLine().toUpperCase();
         while(!exchangeTo.equals( "USD") && !exchangeTo.equals( "EUR") && !exchangeTo.equals( "JPY") && !exchangeTo.equals( "GBP") && !exchangeTo.equals( "AUD")){
             System.out.println("Invalid currency. Please try again.");
-            exchangeTo = input.nextLine();
+            exchangeTo = input.nextLine().toUpperCase();
         }
 
         double finalAmount = (convert(amount, exchangeFrom, exchangeTo));
